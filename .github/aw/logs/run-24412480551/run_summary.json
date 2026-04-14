@@ -1,0 +1,98 @@
+{
+  "cli_version": "v0.68.1",
+  "run_id": 24412480551,
+  "processed_at": "2026-04-14T19:07:45.779014+02:00",
+  "run": {
+    "databaseId": 24412480551,
+    "number": 2,
+    "url": "https://github.com/Davidecastellana/content-creation-pipeline/actions/runs/24412480551",
+    "status": "queued",
+    "conclusion": "",
+    "workflowName": "Hello World Pipeline",
+    "workflowPath": ".github/workflows/hello-world.lock.yml",
+    "createdAt": "2026-04-14T17:07:18Z",
+    "startedAt": "2026-04-14T17:07:18Z",
+    "updatedAt": "2026-04-14T17:07:37Z",
+    "event": "workflow_dispatch",
+    "headBranch": "main",
+    "headSha": "effcb3325a54183a2fc533a2f89ca9605a53514d",
+    "displayTitle": "Hello World Pipeline",
+    "Duration": 19000000000,
+    "ActionMinutes": 0,
+    "TokenUsage": 0,
+    "EstimatedCost": 0,
+    "Turns": 0,
+    "ErrorCount": 0,
+    "WarningCount": 0,
+    "MissingToolCount": 0,
+    "MissingDataCount": 0,
+    "NoopCount": 0,
+    "SafeItemsCount": 0,
+    "EffectiveTokens": 0,
+    "LogsPath": "/Users/davidecastellana/Desktop/content_creation-test/.github/aw/logs/run-24412480551"
+  },
+  "metrics": {
+    "TokenUsage": 0,
+    "EstimatedCost": 0,
+    "Turns": 0,
+    "ToolCalls": null,
+    "ToolSequences": null
+  },
+  "task_domain": {
+    "name": "code_fix",
+    "label": "Code Fix",
+    "reason": "The workflow appears oriented toward code changes or pull request review."
+  },
+  "behavior_fingerprint": {
+    "execution_style": "directed",
+    "tool_breadth": "narrow",
+    "actuation_style": "read_only",
+    "resource_profile": "lean",
+    "dispatch_mode": "standalone",
+    "agentic_fraction": 0
+  },
+  "access_analysis": null,
+  "firewall_analysis": null,
+  "redacted_domains_analysis": null,
+  "missing_tools": null,
+  "missing_data": null,
+  "noops": null,
+  "mcp_failures": null,
+  "github_rate_limit_usage": {
+    "total_requests_made": 2,
+    "core_consumed": 1,
+    "core_remaining": 4974,
+    "core_limit": 5000,
+    "resources": [
+      {
+        "resource": "core",
+        "requests_made": 2,
+        "quota_consumed": 1,
+        "final_remaining": 4974,
+        "limit": 5000
+      }
+    ]
+  },
+  "artifacts_list": [
+    "aw-prompts/prompt.txt",
+    "aw_info.json",
+    "github_rate_limits.jsonl"
+  ],
+  "job_details": [
+    {
+      "name": "activation",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-04-14T17:07:23Z",
+      "completed_at": "2026-04-14T17:07:37Z",
+      "Duration": 14000000000
+    },
+    {
+      "name": "agent",
+      "status": "in_progress",
+      "conclusion": "",
+      "started_at": "2026-04-14T17:07:40Z",
+      "Duration": 0
+    }
+  ]
+}
