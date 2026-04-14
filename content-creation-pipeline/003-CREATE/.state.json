@@ -1,0 +1,10 @@
+{
+  "stage": "003-CREATE",
+  "project": "test-project",
+  "status": "pending",
+  "type": "auto",
+  "createdAt": "2026-04-13T22:41:18.263Z",
+  "updatedAt": "2026-04-13T22:41:18.263Z",
+  "outputs": [],
+  "metadata": {}
+}

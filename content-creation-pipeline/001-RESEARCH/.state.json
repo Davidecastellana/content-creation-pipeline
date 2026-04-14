@@ -1,0 +1,13 @@
+{
+  "stage": "001-RESEARCH",
+  "project": "test-project",
+  "status": "in_progress",
+  "type": "hybrid",
+  "createdAt": "2026-04-13T00:00:00Z",
+  "updatedAt": "2026-04-13T23:01:54.574Z",
+  "outputs": [
+    "content-creation-pipeline/001-RESEARCH/outputs/COMPETITOR-ANALYSIS.md",
+    "content-creation-pipeline/001-RESEARCH/outputs/TREND-REPORT.md"
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+
+# OpenCode
+.opencode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment (NEVER commit these)
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+
+# Test
+coverage/

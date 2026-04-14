@@ -1,0 +1,10 @@
+{
+  "stage": "002-INTAKE",
+  "project": "test-project",
+  "status": "pending",
+  "type": "interactive",
+  "createdAt": "2026-04-13T22:41:18.262Z",
+  "updatedAt": "2026-04-13T22:41:18.262Z",
+  "outputs": [],
+  "metadata": {}
+}
