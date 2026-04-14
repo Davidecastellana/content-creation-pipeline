@@ -3,38 +3,48 @@ description: FAAW Pipeline Executor - Runs content creation pipeline via MiniMax
 on:
   workflow_dispatch:
   schedule:
-    - cron: "daily"
+    - cron: "0 9 * * *"
   push:
     branches:
       - main
 
 permissions:
   contents: read
-  issues: read
-  pull-requests: read
 
 strict: false
 
-safe-outputs:
-  create-issue:
-  add-comment:
+network:
+  allowed:
+    - defaults
+    - api.minimax.io
 
 engine:
   id: claude
+  api-target: api.minimax.io
   max-turns: 50
 
 tools:
   github: all
-  timeout: 600
+  timeout: 120
 
 timeout-minutes: 30
 
 env:
-  PIPELINE_ROOT: "content-creation-pipeline"
+  ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
   ANTHROPIC_BASE_URL: "https://api.minimax.io/anthropic"
-  ANTHROPIC_AUTH_TOKEN: "${{ secrets.MINIMAX_API_KEY }}"
+  ANTHROPIC_API_TARGET: "api.minimax.io"
+  ANTHROPIC_API_BASE_PATH: "/anthropic"
   ANTHROPIC_MODEL: "MiniMax-M2.7"
   CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1"
+
+safe-outputs:
+  create-issue:
+    title-prefix: "[pipeline] "
+    labels: [automated, pipeline]
+    max: 5
+    close-older-issues: true
+  add-comment:
+    max: 10
 ---
 
 # FAAW Pipeline Executor
@@ -49,19 +59,19 @@ This workflow reads your FAAW folder structure and executes the content creation
 - `content-creation-pipeline/004-OUTPUT/` - Output stage
 
 ## Task 1: Read Root CLAUDE.md
-Read the CLAUDE.md file at the repository root to understand the pipeline structure and content types supported.
+Read the CLAUDE.md file at the repository root to understand the pipeline structure, content types supported, and overall workflow orchestration.
 
 ## Task 2: Execute Stage 001 (Research)
 1. Read `content-creation-pipeline/001-RESEARCH/CLAUDE.md`
 2. Read any skill files in `content-creation-pipeline/001-RESEARCH/`
 3. Execute research tasks defined in the stage
-4. Output findings to stage artifacts
+4. Output findings as artifacts or comments
 
 ## Task 3: Execute Stage 002 (Intake/Planning)
 1. Read `content-creation-pipeline/002-INTAKE/CLAUDE.md`
 2. Read any skill files in `content-creation-pipeline/002-INTAKE/`
 3. Execute planning tasks defined in the stage
-4. Output plans to stage artifacts
+4. Output plans as artifacts or comments
 
 ## Task 4: Execute Stage 003 (Creation)
 1. Read `content-creation-pipeline/003-CREATE/CLAUDE.md`
