@@ -3,15 +3,17 @@ description: FAAW Pipeline Executor - Runs content creation pipeline via MiniMax
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 9 * * *"  # Daily at 9 AM
+    - cron: "daily"
   push:
     branches:
       - main
 
 permissions:
   contents: read
-  issues: write
-  pull-requests: write
+  issues: read
+  pull-requests: read
+
+strict: false
 
 safe-outputs:
   create-issue:
@@ -19,26 +21,20 @@ safe-outputs:
 
 engine:
   id: claude
-  env:
-    ANTHROPIC_BASE_URL: "https://api.minimax.io/anthropic"
-    ANTHROPIC_AUTH_TOKEN: "${{ secrets.MINIMAX_API_KEY }}"
-    ANTHROPIC_MODEL: "MiniMax-M2.7"
-    CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1"
   max-turns: 50
-  tools:
-    timeout: 300
 
 tools:
-  github:
-    toolsets:
-      - issues
-      - pulls
+  github: all
   timeout: 600
 
 timeout-minutes: 30
 
 env:
   PIPELINE_ROOT: "content-creation-pipeline"
+  ANTHROPIC_BASE_URL: "https://api.minimax.io/anthropic"
+  ANTHROPIC_AUTH_TOKEN: "${{ secrets.MINIMAX_API_KEY }}"
+  ANTHROPIC_MODEL: "MiniMax-M2.7"
+  CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1"
 ---
 
 # FAAW Pipeline Executor
