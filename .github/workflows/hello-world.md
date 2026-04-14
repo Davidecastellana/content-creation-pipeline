@@ -8,6 +8,11 @@ permissions:
 
 strict: false
 
+network:
+  allowed:
+    - defaults
+    - api.minimax.io
+
 engine:
   id: claude
   max-turns: 5
